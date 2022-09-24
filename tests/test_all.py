@@ -20,3 +20,10 @@ def test_tx_size_works(tx_hash, size):
     tx_data = tron.get_transaction(tx_hash)
     data = {"raw_data": tx_data["raw_data"], "signature": tx_data["signature"]}
     assert trontxsize.get_tx_size(data) == size
+
+
+def test_deep_copy():
+    tx_data = tron.get_transaction("29e7d53e7b1463d354d1d7d90172fba89673e7bc5b0c7c441c14152a897ee363")
+    data = {"raw_data": tx_data["raw_data"], "signature": tx_data["signature"]}
+    assert trontxsize.get_tx_size(data) == 267
+    assert "value" in data["raw_data"]["contract"][0]["parameter"]

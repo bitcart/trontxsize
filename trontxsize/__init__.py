@@ -1,5 +1,6 @@
 import base64
 import binascii
+import copy
 
 import base58
 from google.protobuf.json_format import ParseDict
@@ -18,7 +19,7 @@ def normalize_string2(v):
 
 
 def get_tx_size(tx: dict) -> int:
-    data = tx.copy()
+    data = copy.deepcopy(tx)
     raw_data = data["raw_data"]
     raw_contracts = raw_data["contract"]
     contracts = []
