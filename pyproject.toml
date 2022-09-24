@@ -1,0 +1,25 @@
+[tool.black]
+line-length = 127
+extend-exclude="trontxsize/tron_pb2.py"
+
+[tool.isort]
+profile = "black"
+line_length = 127
+
+[tool.pytest.ini_options]
+addopts = [
+    "--cov=trontxsize",
+    "--cov-report",
+    "term-missing",
+]
+filterwarnings = [
+    "error::DeprecationWarning",
+    "error::PendingDeprecationWarning",
+    "ignore:.*The toolz.compatibility module is no longer needed.*:DeprecationWarning:eth_utils.toolz"
+]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "trontxsize/tron_pb2.py"
+]
