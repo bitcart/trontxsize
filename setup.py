@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name="trontxsize",
     packages=find_packages(),
-    version="1.0.2",
+    version="1.0.3",
     license="MIT",
     description="Calculate tron transaction size (bandwidth)",
     long_description=open("README.md").read(),
@@ -22,6 +22,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
     python_requires=">=3.8",
 )
