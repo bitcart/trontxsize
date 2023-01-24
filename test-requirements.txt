@@ -1,8 +1,8 @@
 black
 codecov
 flake8
+https://github.com/bitcartcc/tronpy/archive/b444a61b786671ef189baecbb9853888a88a40eb.zip
 isort
 pre-commit
 pytest
 pytest-cov
-tronpy
