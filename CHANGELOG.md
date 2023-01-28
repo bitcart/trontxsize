@@ -2,6 +2,10 @@
 
 ## Latest changes
 
+## 1.0.4
+
+Re-generate protobuf files with the latest protoc
+
 ## 1.0.3
 
 Support Python 3.11

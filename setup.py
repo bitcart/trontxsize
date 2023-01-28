@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name="trontxsize",
     packages=find_packages(),
-    version="1.0.3",
+    version="1.0.4",
     license="MIT",
     description="Calculate tron transaction size (bandwidth)",
     long_description=open("README.md").read(),
@@ -12,7 +12,7 @@ setup(
     author_email="chuff184@gmail.com",
     url="https://github.com/bitcartcc/trontxsize",
     keywords=["tron", "trx", "bitcartcc", "bandwidth"],
-    install_requires=["protobuf<4,>=3.12", "base58"],
+    install_requires=["protobuf", "base58"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
