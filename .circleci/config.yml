@@ -61,7 +61,8 @@ jobs:
           name: run tests
           command: |
             make ci
-            codecov -F tests -e PYTHON
+
+      - bitcartcc/codecov
 
       - bitcartcc/upload-test-results
 
