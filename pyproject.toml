@@ -15,7 +15,8 @@ addopts = [
 filterwarnings = [
     "error::DeprecationWarning",
     "error::PendingDeprecationWarning",
-    "ignore:.*The toolz.compatibility module is no longer needed.*:DeprecationWarning:eth_utils.toolz"
+    "ignore:.*The toolz.compatibility module is no longer needed.*:DeprecationWarning:eth_utils.toolz",
+    "ignore:pkg_resources is deprecated as an API:DeprecationWarning"
 ]
 
 [tool.coverage.run]
