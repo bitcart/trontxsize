@@ -3,15 +3,15 @@ from setuptools import find_packages, setup
 setup(
     name="trontxsize",
     packages=find_packages(),
-    version="1.0.4",
+    version="1.0.5",
     license="MIT",
     description="Calculate tron transaction size (bandwidth)",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="MrNaif2018",
     author_email="chuff184@gmail.com",
-    url="https://github.com/bitcartcc/trontxsize",
-    keywords=["tron", "trx", "bitcartcc", "bandwidth"],
+    url="https://github.com/bitcart/trontxsize",
+    keywords=["tron", "trx", "bitcart", "bandwidth"],
     install_requires=["protobuf", "base58"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",

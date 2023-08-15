@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  bitcartcc: bitcartcc/bitcartcc-shared@1
+  bitcart: bitcart/bitcart-shared@2
 
 executors:
   main-executor:
@@ -62,12 +62,12 @@ jobs:
           command: |
             make ci
 
-      - bitcartcc/codecov
+      - bitcart/codecov
 
-      - bitcartcc/upload-test-results
+      - bitcart/upload-test-results
 
   deploy:
-    executor: bitcartcc/docker-python
+    executor: bitcart/docker-python
     steps:
       - checkout
 
@@ -92,7 +92,7 @@ workflows:
   version: 2
   test_and_deploy:
     jobs:
-      - bitcartcc/lint:
+      - bitcart/lint:
           name: lint
       - test:
           name: test-<< matrix.v >>

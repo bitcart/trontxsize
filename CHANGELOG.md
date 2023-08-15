@@ -2,6 +2,10 @@
 
 ## Latest changes
 
+## 1.0.5
+
+Rename BitcartCC to Bitcart
+
 ## 1.0.4
 
 Re-generate protobuf files with the latest protoc

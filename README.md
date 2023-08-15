@@ -1,7 +1,7 @@
 # trontxsize - Calculate tron transaction size in bytes
 
-[![CircleCI](https://circleci.com/gh/bitcartcc/trontxsize.svg?style=svg)](https://circleci.com/gh/bitcartcc/trontxsize)
-[![Codecov](https://img.shields.io/codecov/c/github/bitcartcc/trontxsize?style=flat-square)](https://codecov.io/gh/bitcartcc/trontxsize)
+[![CircleCI](https://circleci.com/gh/bitcart/trontxsize.svg?style=svg)](https://circleci.com/gh/bitcart/trontxsize)
+[![Codecov](https://img.shields.io/codecov/c/github/bitcart/trontxsize?style=flat-square)](https://codecov.io/gh/bitcart/trontxsize)
 [![PyPI version](https://img.shields.io/pypi/v/trontxsize.svg?style=flat-square)](https://pypi.python.org/pypi/trontxsize/)
 
 In Tron (TRX) network, fee calculation algorithm is complex. And the most complex part of it is that it depends on transaction size.
