@@ -2,8 +2,8 @@ from setuptools import find_packages, setup
 
 setup(
     name="trontxsize",
-    packages=find_packages(),
-    version="1.0.5",
+    packages=find_packages(exclude=["tests", "tests.*"]),
+    version="1.0.6",
     license="MIT",
     description="Calculate tron transaction size (bandwidth)",
     long_description=open("README.md").read(),
