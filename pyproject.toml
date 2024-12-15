@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "trontxsize"
 version = "1.0.6"
@@ -20,8 +24,13 @@ classifiers = [
 keywords = ["tron", "trx", "bitcart", "bandwidth"]
 dependencies = ["protobuf", "base58"]
 
-[tool.uv]
-dev-dependencies = [
+[project.urls]
+Homepage = "https://github.com/bitcart/trontxsize"
+Source = "https://github.com/bitcart/trontxsize"
+Changelog = "https://github.com/bitcart/trontxsize/blob/master/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
     "black",
     "flake8",
     "isort",
@@ -32,17 +41,11 @@ dev-dependencies = [
     "tronpy",
 ]
 
-[project.urls]
-Homepage = "https://github.com/bitcart/trontxsize"
-Source = "https://github.com/bitcart/trontxsize"
-Changelog = "https://github.com/bitcart/trontxsize/blob/master/CHANGELOG.md"
+[tool.uv]
+default-groups = ['dev']
 
 [tool.hatch.build.targets.wheel]
 packages = ["trontxsize"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
 
 [tool.ruff]
 target-version = "py39"
