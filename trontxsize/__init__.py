@@ -49,7 +49,6 @@ def get_tx_size(tx: dict) -> int:
     for key in ("data", "ref_block_bytes", "ref_block_hash"):
         if key in data["raw_data"]:
             data["raw_data"][key] = normalize_string2(data["raw_data"][key])
-
     transaction = Transaction()
     ParseDict(data, transaction)
     return transaction.ByteSize() + BYTES_DIFF_PROTOBUF
