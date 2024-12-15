@@ -2,6 +2,12 @@
 
 ## Latest changes
 
+## 1.1.0
+
+Use uv & ruff as build infrastructure
+
+Require Python 3.9+
+
 ## 1.0.6
 
 Don't install a separate tests package, but include tests in source tarball

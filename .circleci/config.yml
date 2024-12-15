@@ -77,21 +77,11 @@ jobs:
       - checkout
 
       - run:
-          name: setup credentials
+          name: upload package
           command: |
-            echo -e "[pypi]" >> ~/.pypirc
-            echo -e "username = $PYPI_USER" >> ~/.pypirc
-            echo -e "password = $PYPI_PASS" >> ~/.pypirc
-
-      - run:
-          name: create env, build dist and upload
-          command: |
-            virtualenv ~/venv
-            . ~/venv/bin/activate
-            pip install -U wheel twine
-            python setup.py sdist
-            python setup.py bdist_wheel
-            twine upload dist/*
+            curl -LsSf https://astral.sh/uv/install.sh | sh
+            uv build
+            uv publish --token $PYPI_TOKEN
 
 workflows:
   version: 2

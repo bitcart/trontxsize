@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trontxsize"
-version = "1.0.6"
+version = "1.1.0"
 description = "Calculate tron transaction size (bandwidth)"
 readme = "README.md"
 license = "MIT"
