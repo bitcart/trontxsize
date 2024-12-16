@@ -42,7 +42,7 @@ dev = [
 ]
 
 [tool.uv]
-default-groups = ['dev']
+default-groups = ["dev"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["trontxsize"]
@@ -73,7 +73,7 @@ ignore = ["RET502", "RET503", "S104", "S507", "ASYNC110"]
 mccabe = { max-complexity = 12 }
 
 [tool.ruff.lint.per-file-ignores]
-'tests/*' = ["S"]
+"tests/*" = ["S"]
 
 [tool.pytest.ini_options]
 addopts = ["--cov=trontxsize", "--cov-report", "term-missing"]
