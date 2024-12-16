@@ -53,7 +53,7 @@ line-length = 127
 extend-exclude = ["trontxsize/tron_pb2.py"]
 
 [tool.ruff.lint]
-extend-select = ["UP", "B"]
+extend-select = ["F", "E", "I", "UP", "YTT", "B", "T10", "C", "SIM", "RUF100"]
 
 [tool.pytest.ini_options]
 addopts = ["--cov=trontxsize", "--cov-report", "term-missing"]
