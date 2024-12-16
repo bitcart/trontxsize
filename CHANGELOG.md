@@ -2,6 +2,10 @@
 
 ## Latest changes
 
+## 1.1.1
+
+Support Python 3.13
+
 ## 1.1.0
 
 Use uv & ruff as build infrastructure

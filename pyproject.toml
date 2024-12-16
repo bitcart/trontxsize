@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trontxsize"
-version = "1.1.0"
+version = "1.1.1"
 description = "Calculate tron transaction size (bandwidth)"
 readme = "README.md"
 license = "MIT"
@@ -20,6 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 keywords = ["tron", "trx", "bitcart", "bandwidth"]
 dependencies = ["protobuf", "base58"]
