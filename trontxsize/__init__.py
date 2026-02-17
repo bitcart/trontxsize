@@ -1,20 +1,21 @@
 import base64
 import binascii
 import copy
+from typing import cast
 
 import base58
 from google.protobuf.json_format import ParseDict
 
-from trontxsize.tron_pb2 import Transaction
+from trontxsize.tron_pb2 import Transaction  # type: ignore[attr-defined]
 
 BYTES_DIFF_PROTOBUF = 64  # difference we always get between java and python protobuf for some reason
 
 
-def normalize_string(v):
+def normalize_string(v: str) -> bytes:
     return base64.b64encode(v.encode())
 
 
-def normalize_string2(v):
+def normalize_string2(v: str) -> bytes:
     return base64.b64encode(binascii.unhexlify(v))
 
 
@@ -51,4 +52,4 @@ def get_tx_size(tx: dict) -> int:
             data["raw_data"][key] = normalize_string2(data["raw_data"][key])
     transaction = Transaction()
     ParseDict(data, transaction)
-    return transaction.ByteSize() + BYTES_DIFF_PROTOBUF
+    return cast(int, transaction.ByteSize()) + BYTES_DIFF_PROTOBUF

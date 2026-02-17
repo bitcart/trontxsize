@@ -1,6 +1,6 @@
 # trontxsize - Calculate tron transaction size in bytes
 
-[![CircleCI](https://circleci.com/gh/bitcart/trontxsize.svg?style=svg)](https://circleci.com/gh/bitcart/trontxsize)
+[![CI](https://github.com/bitcart/trontxsize/actions/workflows/ci.yml/badge.svg)](https://github.com/bitcart/trontxsize/actions/workflows/ci.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/bitcart/trontxsize?style=flat-square)](https://codecov.io/gh/bitcart/trontxsize)
 [![PyPI version](https://img.shields.io/pypi/v/trontxsize.svg?style=flat-square)](https://pypi.python.org/pypi/trontxsize/)
 

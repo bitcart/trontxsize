@@ -4,23 +4,23 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trontxsize"
-version = "1.1.1"
+version = "1.2.0"
 description = "Calculate tron transaction size (bandwidth)"
 readme = "README.md"
 license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "MrNaif2018", email = "chuff184@gmail.com" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 keywords = ["tron", "trx", "bitcart", "bandwidth"]
 dependencies = ["protobuf", "base58"]
@@ -31,25 +31,19 @@ Source = "https://github.com/bitcart/trontxsize"
 Changelog = "https://github.com/bitcart/trontxsize/blob/master/CHANGELOG.md"
 
 [dependency-groups]
+lint = ["mypy", "prek", "ruff"]
+test = ["pytest", "pytest-cov", "pytest-durations", "tronpy"]
 dev = [
-    "black",
-    "flake8",
-    "isort",
-    "pre-commit",
-    "pytest",
-    "pytest-cov",
-    "ruff",
-    "tronpy",
+    "rust-just>=1.46.0",
+    { include-group = "lint" },
+    { include-group = "test" },
 ]
-
-[tool.uv]
-default-groups = ["dev"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["trontxsize"]
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py310"
 line-length = 127
 extend-exclude = ["trontxsize/tron_pb2.py"]
 
@@ -76,7 +70,21 @@ mccabe = { max-complexity = 12 }
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S"]
 
+[tool.mypy]
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_return_any = true
+no_implicit_optional = true
+strict_optional = true
+ignore_missing_imports = true
+exclude = ["tests", "trontxsize/tron_pb2.py"]
+
 [tool.pytest.ini_options]
+junit_duration_report = "call"
+junit_suite_name = "trontxsize_test_suite"
 addopts = ["--cov=trontxsize", "--cov-report", "term-missing"]
 filterwarnings = [
     "error::DeprecationWarning",

@@ -2,6 +2,14 @@
 
 ## Latest changes
 
+## 1.2.0
+
+Support Python 3.14
+
+Require Python 3.10+
+
+Switch to github actions, releases are now uploaded via Trusted Publishing.
+
 ## 1.1.1
 
 Support Python 3.13
