@@ -13,7 +13,9 @@ This library does just this:
 ```python
 import trontxsize
 
-print(trontxsize.get_tx_size({"raw_data": ..., "signatures": [...])) # matches bandwidth you see in block explorer
+tx = ...  # transaction as returned by a TRON node, e.g. tronpy's Tron().get_transaction(tx_hash)
+data = {"raw_data": tx["raw_data"], "signature": tx["signature"]}
+print(trontxsize.get_tx_size(data))  # matches bandwidth you see in block explorer
 ```
 
 How does it work? The library pre-compiled a trimmed-down version of Tron protobuf and uses it directly to calculate transaction size

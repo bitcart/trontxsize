@@ -1,9 +1,15 @@
+import json
+from pathlib import Path
+
 import pytest
-from tronpy import Tron
 
 import trontxsize
 
-tron = Tron(network="nile")
+DATA_DIR = Path(__file__).parent / "data"
+
+
+def load_tx(tx_hash):
+    return json.loads((DATA_DIR / f"{tx_hash}.json").read_text())
 
 
 @pytest.mark.parametrize(
@@ -17,13 +23,10 @@ tron = Tron(network="nile")
     ],
 )
 def test_tx_size_works(tx_hash, size):
-    tx_data = tron.get_transaction(tx_hash)
-    data = {"raw_data": tx_data["raw_data"], "signature": tx_data["signature"]}
-    assert trontxsize.get_tx_size(data) == size
+    assert trontxsize.get_tx_size(load_tx(tx_hash)) == size
 
 
 def test_deep_copy():
-    tx_data = tron.get_transaction("29e7d53e7b1463d354d1d7d90172fba89673e7bc5b0c7c441c14152a897ee363")
-    data = {"raw_data": tx_data["raw_data"], "signature": tx_data["signature"]}
+    data = load_tx("29e7d53e7b1463d354d1d7d90172fba89673e7bc5b0c7c441c14152a897ee363")
     assert trontxsize.get_tx_size(data) == 267
     assert "value" in data["raw_data"]["contract"][0]["parameter"]

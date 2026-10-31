@@ -1,0 +1,25 @@
+{
+    "raw_data": {
+        "ref_block_bytes": "9537",
+        "ref_block_hash": "0daae1d2aa19317a",
+        "expiration": 1664060877440,
+        "contract": [
+            {
+                "parameter": {
+                    "value": {
+                        "owner_address": "TVKxs32qNoNEko83J3mmNjqawYhF69gyxZ",
+                        "contract_address": "TXYZopYRdj2D9XRtbG411XZZ3kM5VkAeBf",
+                        "data": "a9059cbb000000000000000000000000eb7e59ae3146072c768f72118127b058f9a504f60000000000000000000000000000000000000000000000000000000000365240"
+                    },
+                    "type_url": "type.googleapis.com/protocol.TriggerSmartContract"
+                },
+                "type": "TriggerSmartContract"
+            }
+        ],
+        "timestamp": 1664024877440,
+        "fee_limit": 9000000
+    },
+    "signature": [
+        "5c60be5235562ed0234629ae238d35f3a926fd4d143ebbe900034982d7c451002bb6d4b7bb299409f99eca8c6af945b50ca457b3d0117517b3ddca3e812fba7f00"
+    ]
+}

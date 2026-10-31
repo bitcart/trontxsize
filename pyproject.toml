@@ -10,20 +10,21 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "MrNaif2018", email = "chuff184@gmail.com" }]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Programming Language :: Python :: Free Threading :: 2 - Beta",
 ]
 keywords = ["tron", "trx", "bitcart", "bandwidth"]
-dependencies = ["protobuf", "base58"]
+dependencies = ["protobuf>=3.20", "base58"]
 
 [project.urls]
 Homepage = "https://github.com/bitcart/trontxsize"
@@ -31,39 +32,23 @@ Source = "https://github.com/bitcart/trontxsize"
 Changelog = "https://github.com/bitcart/trontxsize/blob/master/CHANGELOG.md"
 
 [dependency-groups]
-lint = ["mypy", "prek", "ruff"]
-test = ["pytest", "pytest-cov", "pytest-durations", "tronpy"]
-dev = [
-    "rust-just>=1.46.0",
-    { include-group = "lint" },
-    { include-group = "test" },
-]
+lint = ["deptry", "mypy", "prek", "ruff"]
+test = ["pytest", "pytest-cov", "pytest-durations"]
+dev = ["rust-just>=1.46.0", { include-group = "lint" }, { include-group = "test" }]
+
+[tool.hatch.build.targets.sdist]
+include = ["trontxsize", "tests", "CHANGELOG.md"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["trontxsize"]
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 line-length = 127
 extend-exclude = ["trontxsize/tron_pb2.py"]
 
 [tool.ruff.lint]
-select = [
-    "F",
-    "E",
-    "I",
-    "UP",
-    "YTT",
-    "B",
-    "T10",
-    "C",
-    "SIM",
-    "RUF100",
-    "RET",
-    "A",
-    "S",
-    "ASYNC",
-]
+select = ["F", "E", "I", "UP", "YTT", "B", "T10", "C", "SIM", "RUF100", "RET", "A", "S", "ASYNC"]
 ignore = ["RET502", "RET503", "S104", "S507", "ASYNC110"]
 mccabe = { max-complexity = 12 }
 
@@ -83,12 +68,14 @@ ignore_missing_imports = true
 exclude = ["tests", "trontxsize/tron_pb2.py"]
 
 [tool.pytest.ini_options]
+strict = true
 junit_duration_report = "call"
 junit_suite_name = "trontxsize_test_suite"
 addopts = ["--cov=trontxsize", "--cov-report", "term-missing"]
 filterwarnings = [
     "error::DeprecationWarning",
     "error::PendingDeprecationWarning",
+    "error::FutureWarning",
 ]
 
 [tool.coverage.run]

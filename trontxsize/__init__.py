@@ -12,11 +12,11 @@ BYTES_DIFF_PROTOBUF = 64  # difference we always get between java and python pro
 
 
 def normalize_string(v: str) -> bytes:
-    return base64.b64encode(v.encode())
+    return base64.urlsafe_b64encode(v.encode())
 
 
 def normalize_string2(v: str) -> bytes:
-    return base64.b64encode(binascii.unhexlify(v))
+    return base64.urlsafe_b64encode(binascii.unhexlify(v))
 
 
 def get_tx_size(tx: dict) -> int:

@@ -1,0 +1,25 @@
+{
+    "raw_data": {
+        "ref_block_bytes": "97b8",
+        "ref_block_hash": "e7b5777314f1c762",
+        "expiration": 1664026875000,
+        "contract": [
+            {
+                "parameter": {
+                    "value": {
+                        "asset_name": "1004858",
+                        "owner_address": "THwzUmG52vttpydSYTeGRhuBXCDUnjT4L2",
+                        "to_address": "TDiBmE9MaWpk5YBtSpyAd25A8Hdvo48eYx",
+                        "amount": 1000000000
+                    },
+                    "type_url": "type.googleapis.com/protocol.TransferAssetContract"
+                },
+                "type": "TransferAssetContract"
+            }
+        ],
+        "timestamp": 1664026815992
+    },
+    "signature": [
+        "9d677ba8b73916451cb21fb6815573a0c1a0937cfc1926cca5b720a722c8f78f2ccfe0ac14d595c85194d1768269cba5387b9d512677809d743f74e50e725daa01"
+    ]
+}
