@@ -2,6 +2,18 @@
 
 ## Latest changes
 
+## 1.3.0
+
+Fix transaction size calculation breaking in future Python versions: bytes fields are now encoded as URL-safe Base64, as protobuf expects
+
+Support python 3.15 and free-threaded python
+
+Drop python 3.10 support
+
+Require protobuf 3.20+
+
+Fix the usage example in README, slimmer sdist package
+
 ## 1.2.0
 
 Support Python 3.14
