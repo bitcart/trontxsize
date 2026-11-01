@@ -2,6 +2,10 @@
 
 ## Latest changes
 
+## 1.4.0
+
+Now using immutable releases
+
 ## 1.3.0
 
 Fix transaction size calculation breaking in future Python versions: bytes fields are now encoded as URL-safe Base64, as protobuf expects
