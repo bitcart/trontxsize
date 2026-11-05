@@ -2,6 +2,10 @@
 
 ## Latest changes
 
+## 1.5.0
+
+Accept transactions with a `raw_data_hex` field, as returned by `to_json` in newer `tronpy` versions
+
 ## 1.4.0
 
 Now using immutable releases

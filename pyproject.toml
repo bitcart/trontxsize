@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trontxsize"
-version = "1.4.0"
+version = "1.5.0"
 description = "Calculate tron transaction size (bandwidth)"
 readme = "README.md"
 license = "MIT"
@@ -35,6 +35,10 @@ Changelog = "https://github.com/bitcart/trontxsize/blob/master/CHANGELOG.md"
 lint = ["deptry", "mypy", "prek", "ruff"]
 test = ["pytest", "pytest-cov", "pytest-durations"]
 dev = ["rust-just>=1.46.0", { include-group = "lint" }, { include-group = "test" }]
+
+[tool.uv]
+# dependency cooldowns for security
+exclude-newer = "1 week"
 
 [tool.hatch.build.targets.sdist]
 include = ["trontxsize", "tests", "CHANGELOG.md"]

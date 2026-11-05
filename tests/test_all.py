@@ -30,3 +30,9 @@ def test_deep_copy():
     data = load_tx("29e7d53e7b1463d354d1d7d90172fba89673e7bc5b0c7c441c14152a897ee363")
     assert trontxsize.get_tx_size(data) == 267
     assert "value" in data["raw_data"]["contract"][0]["parameter"]
+
+
+def test_tronpy_transaction_json():
+    tx_hash = "29e7d53e7b1463d354d1d7d90172fba89673e7bc5b0c7c441c14152a897ee363"
+    data = {**load_tx(tx_hash), "txID": tx_hash, "permission": None, "raw_data_hex": "0a02"}
+    assert trontxsize.get_tx_size(data) == 267

@@ -42,6 +42,7 @@ def get_tx_size(tx: dict) -> int:
     raw_data["contract"] = contracts
     data.pop("txID", None)
     data.pop("permission", None)
+    data.pop("raw_data_hex", None)
 
     for index, signature in enumerate(data["signature"]):
         if isinstance(signature, str):
